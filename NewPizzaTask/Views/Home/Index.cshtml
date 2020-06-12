@@ -1,11 +1,11 @@
-﻿@model NewPizzaTask.ViewModels.HomeIndexViewModel
-@using PagedList;
+﻿@model PagedList.IPagedList<Product>
+@using NewPizzaTask.Models;
 @using PagedList.Mvc;
 @{
     ViewBag.Title = "Home Page";
 }
 
-<div id="themeSlider" class="carousel slide" data-ride="carousel" >
+<div id="themeSlider" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#themeSlider" data-slide-to="0" class="active"></li>
         <li data-target="#themeSlider" data-slide-to="1"></li>
@@ -31,7 +31,7 @@
         </div>
         <div class="item">
             <div class="imgOverlay"></div>
-            <img style="height:320px;width:100%"  src="~/Images/Homemade-CHeese-Pizza-1x1-featured-1.jpg" alt="Second slide">
+            <img style="height:320px;width:100%" src="~/Images/Homemade-CHeese-Pizza-1x1-featured-1.jpg" alt="Second slide">
             <div class="carousel-caption">
                 <h3>Top Favourite: Pit Pumpik</h3>
 
@@ -45,12 +45,12 @@
     <a class="right carousel-control" href="#themeSlider" data-slide="next">
         <span class="fa fa-chevron-right"></span>
     </a>
-   
+
 </div>
 
 <div class="olContent f1"><h2 style="color:black">Search Pizza</h2></div>
 
-<form  method="post">
+<form method="post">
     <div class="olSearch fr">
         <input type="text" name="search" placeholder="Enter Keyword" class="inputComn form-control" />
         <div class="searchIcon">
@@ -67,12 +67,12 @@
     <div class="col-md-12">
         <div class="page-header">
             <h2>Our Menu </h2>
-        </div> 
+        </div>
     </div>
 </div>
 
 <div class="row product-container">
-    @foreach (var item in Model.ListOfProducts)
+    @foreach (Product item in Model)
     {
         <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px">
             <div class="thumbnail product-item" style="height:300px">
@@ -83,7 +83,8 @@
 
                 <div class="caption">
                     <h5>@item.ProductName</h5>
-                    <p>@item.Price $.</p>
+                    <p>@item.PriceUSD $.</p>
+                    <p>@item.PriceUSD €.</p>
 
                     <div>
                         @if (item.Quantity > 0)
@@ -101,7 +102,7 @@
                     </div>
 
                     <div class="product-item-badge">
-                        @if (item.IsFeatured==true)
+                        @if (item.IsFeatured == true)
                         {
                             <p>New</p>
 
@@ -115,9 +116,9 @@
             </div>
         </div>
     }
-  
-    
+
+
 </div>
 <div class="container">
-    @Html.PagedListPager(Model.ListOfProducts, page => Url.Action("Index", new { page, search = Request.QueryString["search"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayItemSliceAndTotal = true })
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, search = Request.QueryString["search"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayItemSliceAndTotal = true })
 </div>

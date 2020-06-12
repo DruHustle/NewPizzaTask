@@ -10,10 +10,9 @@ namespace NewPizzaTask.Models
     {
         [Key]
         public int CartId { get; set; }
-        public int ProductId { get; set; }
-        public int MemberId { get; set; }
         public int CartStatusId { get; set; }
 
-        public virtual Product Product { get; set; }
+        public virtual List<Product> Products { get; set; }
+
     }
 }

@@ -31,11 +31,10 @@ namespace NewPizzaTask.Database
 
         
         public DbSet<Cart> Carts { get; set; }
-        public DbSet<CartStatus> CartStatuses { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<ShippingDetail> ShippingDetails { get; set; }
-        public DbSet<SlideImage> SlideImages { get; set; }
+        public DbSet<OrderDetail> ShippingDetails { get; set; }
+
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

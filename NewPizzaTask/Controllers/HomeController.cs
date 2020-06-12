@@ -1,20 +1,33 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using NewPizzaTask.Database;
 using NewPizzaTask.Models;
-using NewPizzaTask.ViewModels;
+using NewPizzaTask.DataModels;
+using PagedList;
 
 namespace NewPizzaTask.Controllers
 {
     public class HomeController : Controller
     {
-        readonly ApplicationDBContext dBContext = new ApplicationDBContext();
-       
+        readonly ApplicationDBContext dBContext;
+
+        public HomeController()
+        {
+            dBContext = new ApplicationDBContext();
+        }
+
         public ActionResult Index(string search, int? page)
         {
-            HomeIndexViewModel model = new HomeIndexViewModel();
-            return View(model.CreateModel(search, 8, page));
+            int pageIndex = page ?? 1;
+            int pageSize = 8;
+
+            IPagedList<Product> productList = string.IsNullOrWhiteSpace(search)
+                ? this.dBContext.Products.OrderBy(x => x.ProductId).ToPagedList(pageIndex, pageSize)
+                : this.dBContext.Products.Where(x => (x.ProductName ?? String.Empty).ToLower().Contains(search.ToLower())).OrderBy(x => x.ProductId).ToPagedList(pageIndex, pageSize);
+
+            return View(productList);
         }
 
         public ActionResult Checkout()

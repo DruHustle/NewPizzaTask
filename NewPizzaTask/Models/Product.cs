@@ -28,9 +28,6 @@ namespace NewPizzaTask.Models
         public decimal PriceUSD { get; set; }
         public decimal PriceEUR { get; set; }
 
-
-
-        public virtual List<Cart> Carts { get; set; }
         public virtual Category Category { get; set; }
     }
 }

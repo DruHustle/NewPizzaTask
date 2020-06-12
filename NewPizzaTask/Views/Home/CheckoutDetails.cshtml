@@ -1,4 +1,4 @@
-﻿@using NewPizzaTask.Models;
+﻿@using NewPizzaTask.DataModels;
 @{
     ViewBag.Title = "CheckoutDetails";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -17,7 +17,7 @@ else
         <thead>
             <tr>
                 <th>Product</th>
-                <th>Price</th>
+                <th>Price EUR</th>
                 <th>Quantity</th>
                 <th>Line Total</th>
 
@@ -29,14 +29,14 @@ else
             }
             @foreach (CartItem item in (List<CartItem>)Session["cart"])
             {
-                int lineTotal = Convert.ToInt32(item.Quantity * item.Product.Price);
+                int lineTotal = Convert.ToInt32(item.Quantity * item.Product.PriceEUR);
                 Total = Convert.ToInt32(@Total + lineTotal);
 
                 Session["SesTotal"] = Total;
 
                 <tr>
                     <td>@item.Product.ProductName</td>
-                    <td>@item.Product.Price</td>
+                    <td>@item.Product.PriceEUR</td>
                     <td>@item.Quantity</td>
                     <td>@lineTotal</td>
                 </tr>
