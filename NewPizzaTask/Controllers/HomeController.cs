@@ -56,7 +56,7 @@ namespace NewPizzaTask.Controllers
             return Redirect("Checkout");
         }
 
-        [HttpPost]
+        
         public ActionResult AddToCart(int productId, string url)
         {
             if (Session["cart"] == null)
