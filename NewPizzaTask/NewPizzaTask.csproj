@@ -237,7 +237,14 @@
     <Content Include="Images\searchIcon.png" />
     <Content Include="josephjpearce_dribbble_exy-loader.gif" />
     <Content Include="lg.dual-ring-loader.gif" />
+    <Content Include="PizzaImages\190226-buffalo-chicken-pizza-370-1552084943.jpg" />
     <Content Include="PizzaImages\20-3-large.jpg" />
+    <Content Include="PizzaImages\besthomemadepizzahero.jpg" />
+    <Content Include="PizzaImages\cheese-pizza-with-cauliflower-pesto-crust.png" />
+    <Content Include="PizzaImages\Homemade-CHeese-Pizza-1x1-featured-1.jpg" />
+    <Content Include="PizzaImages\Pepperoni-Pizza-10.jpg" />
+    <Content Include="PizzaImages\sheet-pan-pizza-5-660x990.jpg" />
+    <Content Include="PizzaImages\the-best-homemade-margherita-pizza-1-4.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
