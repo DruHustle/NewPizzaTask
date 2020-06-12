@@ -26,7 +26,8 @@
                     <tr>
                         <th>Number</th>
                         <th>Product</th>
-                        <th>Action</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -34,14 +35,18 @@
                     @{int count=1; }
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>@count</td>
-                            <td>@item.ProductName</td>
-                            <td>
+                    <tr>
+                        <td>@count</td>
+                        <td>@item.ProductName</td>
+                        <td>
 
-                                @Html.ActionLink("Edit", "ProductEdit", new { productId = item.ProductId })
-                            </td>
-                        </tr>
+                            @Html.ActionLink("Edit", "ProductEdit", new { productId = item.ProductId })
+                        </td>
+                        <td>
+
+                            @Html.ActionLink("Delete", "ProductDelete", new { productId = item.ProductId })
+                        </td>
+                    </tr>
 
                         count++;
                     }

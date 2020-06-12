@@ -285,7 +285,9 @@
     <Content Include="Views\Admin\Categories.cshtml" />
     <Content Include="Views\Admin\AddCategory.cshtml" />
     <Content Include="Views\Admin\Product.cshtml" />
-    <Content Include="Views\Admin\ProductEdit.cshtml" />
+    <Content Include="Views\Admin\ProductEdit.cshtml">
+      <BrowseToURL>~/Admin/ProductEdit</BrowseToURL>
+    </Content>
     <Content Include="Views\Admin\ProductAdd.cshtml" />
     <Content Include="Views\Admin\CategoryEdit.cshtml" />
     <Content Include="Views\Home\Checkout.cshtml" />

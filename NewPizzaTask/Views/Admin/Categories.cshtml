@@ -34,24 +34,29 @@
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Sr. No.</th>
+                                <th>Number</th>
                                 <th>Category Name</th>
-                                <th>Action</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
                             </tr>
                         </tfoot>
                         <tbody>
                             @foreach (var item in Model)
                             {
 
-                                <tr>
-                                    <td>@(Model.IndexOf(item)+1)</td>
-                                    <td>@item.CategoryName</td>
-                                    <td>
-                                        @Html.ActionLink("Edit", "CategoryEdit", new { catId = item.CategoryId })
-                                    </td>
+                            <tr>
+                                <td>@(Model.IndexOf(item)+1)</td>
+                                <td>@item.CategoryName</td>
+                                <td>
+                                    @Html.ActionLink("Edit", "CategoryEdit", new { catId = item.CategoryId })
+                                </td>
+                                <td>
 
-                                  
-                                </tr>
+                                    @Html.ActionLink("Delete", "CategoryDelete", new { productId = item.CategoryId })
+                                </td>
+
+
+                            </tr>
                             }
                             
                             </tbody>

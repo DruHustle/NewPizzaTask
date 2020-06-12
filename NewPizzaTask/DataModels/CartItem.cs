@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 using NewPizzaTask.Models;
 
 namespace NewPizzaTask.DataModels

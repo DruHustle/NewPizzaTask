@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using NewPizzaTask.Models;
+﻿using NewPizzaTask.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +18,7 @@ namespace NewPizzaTask.Controllers
         public List<SelectListItem> GetCategory()
         {
             List<SelectListItem> selectListItems = new List<SelectListItem>();
-            List<Category> categories = dBContext.Categories.ToList();
+            List<Category> categories = dBContext.Categories.Where(i => i.IsDelete == false).ToList();
 
             selectListItems = categories.Select(category => new SelectListItem
             {
@@ -31,6 +30,7 @@ namespace NewPizzaTask.Controllers
 
             return selectListItems;
         }
+
         public ActionResult Dashboard()
         {
             return View();
@@ -61,7 +61,16 @@ namespace NewPizzaTask.Controllers
 
             }
             return View(cd);
+        }
 
+        public ActionResult CategoryDelete(int catId)
+        {
+            Category cd = dBContext.Categories.Find(catId);
+            cd.IsDelete = true;
+            dBContext.Entry(cd).State = EntityState.Modified;
+            dBContext.SaveChanges();
+
+            return RedirectToAction("Categories");
         }
 
         public ActionResult CategoryEdit(int catId)
@@ -76,9 +85,21 @@ namespace NewPizzaTask.Controllers
             dBContext.SaveChanges();
             return RedirectToAction("Categories");
         }
+
         public ActionResult Product()
         {
             return View(dBContext.Products.ToList());
+        }
+        
+        public ActionResult ProductDelete(int productId)
+        {
+            Product tbl = dBContext.Products.Find(productId);
+            tbl.ModifiedDate = DateTime.Now;
+            tbl.IsDelete = true;
+            dBContext.Entry(tbl).State = EntityState.Modified;
+            dBContext.SaveChanges();
+
+            return RedirectToAction("Product");
         }
 
         public ActionResult ProductEdit(int productId)
@@ -105,11 +126,13 @@ namespace NewPizzaTask.Controllers
             dBContext.SaveChanges();
             return RedirectToAction("Product");
         }
+
         public ActionResult ProductAdd()
         {
             ViewBag.CategoryList = GetCategory();
             return View();
         }
+
         [HttpPost]
         public ActionResult ProductAdd(Product tbl, HttpPostedFileBase file)
         {
