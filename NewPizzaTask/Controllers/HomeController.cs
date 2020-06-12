@@ -9,7 +9,7 @@ namespace NewPizzaTask.Controllers
 {
     public class HomeController : Controller
     {
-        ApplicationDBContext dBContext = new ApplicationDBContext();
+        readonly ApplicationDBContext dBContext = new ApplicationDBContext();
        
         public ActionResult Index(string search, int? page)
         {

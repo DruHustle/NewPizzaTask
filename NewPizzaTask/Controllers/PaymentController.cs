@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PayPal.Api;
-//using NewPizzaTask.ViewModels;
+using NewPizzaTask.Models;
 
 namespace NewPizzaTask.Controllers
 {
