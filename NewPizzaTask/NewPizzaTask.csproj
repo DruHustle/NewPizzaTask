@@ -193,10 +193,6 @@
     <Compile Include="Migrations\202006102328395_Migration1.Designer.cs">
       <DependentUpon>202006102328395_Migration1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006112046556_Migration2.cs" />
-    <Compile Include="Migrations\202006112046556_Migration2.Designer.cs">
-      <DependentUpon>202006112046556_Migration2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="ViewModels\CartItem.cs" />
@@ -241,6 +237,7 @@
     <Content Include="Images\searchIcon.png" />
     <Content Include="josephjpearce_dribbble_exy-loader.gif" />
     <Content Include="lg.dual-ring-loader.gif" />
+    <Content Include="PizzaImages\20-3-large.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -305,7 +302,6 @@
     <Folder Include="AdminStyle\js\" />
     <Folder Include="AdminStyle\scss\" />
     <Folder Include="App_Data\" />
-    <Folder Include="ProductImg\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -319,9 +315,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202006102328395_Migration1.resx">
       <DependentUpon>202006102328395_Migration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006112046556_Migration2.resx">
-      <DependentUpon>202006112046556_Migration2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
