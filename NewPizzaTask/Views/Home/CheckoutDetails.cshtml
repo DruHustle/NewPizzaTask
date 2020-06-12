@@ -1,4 +1,4 @@
-﻿@using NewPizzaTask.Models.Home;
+﻿@using NewPizzaTask.Models;
 @{
     ViewBag.Title = "CheckoutDetails";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -25,12 +25,12 @@ else
         </thead>
         <tbody>
             @{
-    int Total = 0;
+                int Total = 0;
             }
-            @foreach (Item item in (List<Item>)Session["cart"])
+            @foreach (CartItem item in (List<CartItem>)Session["cart"])
             {
                 int lineTotal = Convert.ToInt32(item.Quantity * item.Product.Price);
-                Total=Convert.ToInt32(@Total+lineTotal);
+                Total = Convert.ToInt32(@Total + lineTotal);
 
                 Session["SesTotal"] = Total;
 
@@ -44,11 +44,11 @@ else
 
             <tr>
                 <td colspan="4" class="text-right"><b>Total: @Total</b></td>
-              
+
             </tr>
         </tbody>
     </table>
-    <a href="@Url.Action("PaymentWithPapal", "Payment")" class="btn btn-success"  >Payment >></a>
+    <a href="@Url.Action("PaymentWithPapal", "Payment")" class="btn btn-success">Payment >></a>
 
 }
 

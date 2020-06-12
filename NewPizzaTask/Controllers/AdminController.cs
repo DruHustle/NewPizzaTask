@@ -82,7 +82,8 @@ namespace NewPizzaTask.Controllers
         }
 
         public ActionResult ProductEdit(int productId)
-        {                      
+        {
+            ViewBag.CategoryList = GetCategory();
             return View(dBContext.Products.Find(productId));
         }
 
@@ -93,12 +94,13 @@ namespace NewPizzaTask.Controllers
             if (file != null)
             {
                 pic = System.IO.Path.GetFileName(file.FileName);
-                string path = System.IO.Path.Combine(Server.MapPath("~/ProductImg/"), pic);
+                string path = System.IO.Path.Combine(Server.MapPath("~/PizzaImages/"), pic);
                 // file is uploaded
                 file.SaveAs(path);
             }
             tbl.ProductImage = file != null ? pic : tbl.ProductImage;
             tbl.ModifiedDate = DateTime.Now;
+
             dBContext.Entry(tbl).State = EntityState.Modified;
             dBContext.SaveChanges();
             return RedirectToAction("Product");
