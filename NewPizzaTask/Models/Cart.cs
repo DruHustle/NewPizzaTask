@@ -12,7 +12,5 @@ namespace NewPizzaTask.Models
         public int CartId { get; set; }
         public int CartStatusId { get; set; }
 
-        public virtual List<Product> Products { get; set; }
-
     }
 }

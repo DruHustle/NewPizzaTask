@@ -189,9 +189,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006122203070_Migration1.cs" />
-    <Compile Include="Migrations\202006122203070_Migration1.Designer.cs">
-      <DependentUpon>202006122203070_Migration1.cs</DependentUpon>
+    <Compile Include="Migrations\202006122258143_Migration1.cs" />
+    <Compile Include="Migrations\202006122258143_Migration1.Designer.cs">
+      <DependentUpon>202006122258143_Migration1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -309,8 +309,8 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006122203070_Migration1.resx">
-      <DependentUpon>202006122203070_Migration1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006122258143_Migration1.resx">
+      <DependentUpon>202006122258143_Migration1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

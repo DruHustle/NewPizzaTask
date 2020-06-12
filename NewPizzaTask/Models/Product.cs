@@ -8,6 +8,7 @@ namespace NewPizzaTask.Models
     {
         [Key]
         public int ProductId { get; set; }
+
         [Required(ErrorMessage = "Product Name is Required")]
         [StringLength(100, ErrorMessage = "Minimum 3 and minimum 5 and maximum 100 charaters are allwed", MinimumLength = 3)]
         public string ProductName { get; set; }
@@ -29,5 +30,6 @@ namespace NewPizzaTask.Models
         public decimal PriceEUR { get; set; }
 
         public virtual Category Category { get; set; }
+        public virtual Cart Cart { get; set; }
     }
 }

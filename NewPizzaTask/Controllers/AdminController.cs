@@ -123,7 +123,7 @@ namespace NewPizzaTask.Controllers
             }
             tbl.ProductImage = pic;
             tbl.CreatedDate = DateTime.Now;
-            tbl.ModifiedDate = DateTime.Now;
+            tbl.ModifiedDate = DateTime.MinValue;
             dBContext.Products.Add(tbl);
             dBContext.SaveChanges();
             return RedirectToAction("Product");

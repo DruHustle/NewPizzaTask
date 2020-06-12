@@ -10,7 +10,8 @@ namespace NewPizzaTask.Models
     public class OrderDetail
     {
         [Key]
-        public int OrderDetailId { get; set; }
+        public int OrderId { get; set; }
+
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Adress { get; set; }

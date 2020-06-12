@@ -13,7 +13,7 @@ namespace NewPizzaTask.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202006122203070_Migration1"; }
+            get { return "202006122258143_Migration1"; }
         }
         
         string IMigrationMetadata.Source
