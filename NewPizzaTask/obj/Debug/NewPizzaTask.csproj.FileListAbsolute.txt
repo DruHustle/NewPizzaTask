@@ -1,0 +1,4 @@
+C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.csprojAssemblyReference.cache
+C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.Migrations.Migration1.resources
+C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.csproj.GenerateResource.cache
+C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.csproj.CoreCompileInputs.cache

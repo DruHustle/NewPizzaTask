@@ -9,7 +9,7 @@ namespace NewPizzaTask.ViewModels
 {
     public class HomeIndexViewModel
     {
-        //public GenericUnitOfWork _unitOfWork = new GenericUnitOfWork();
+        
         readonly ApplicationDBContext dBContext = new ApplicationDBContext();
         public IPagedList<Product> ListOfProducts { get; set; }
 

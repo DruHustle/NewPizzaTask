@@ -25,9 +25,11 @@ namespace NewPizzaTask.Models
         public int Quantity { get; set; }
         [Required]
         [Range(typeof(decimal), "1", "200000", ErrorMessage = "invalid Price")]
-        public decimal Price { get; set; }
+        public decimal PriceUSD { get; set; }
+        public decimal PriceEUR { get; set; }
 
-       
+
+
         public virtual List<Cart> Carts { get; set; }
         public virtual Category Category { get; set; }
     }

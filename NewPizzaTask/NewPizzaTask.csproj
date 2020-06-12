@@ -185,7 +185,6 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Database\ApplicationDBContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -207,7 +206,6 @@
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
     <Compile Include="ViewModels\HomeIndexViewModel.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
-    <Compile Include="PaypalConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -233,8 +231,6 @@
     <Content Include="Images\pizza_tasty1.jpeg" />
     <Content Include="Images\pizza_tasty2.png" />
     <Content Include="Images\searchIcon.png" />
-    <Content Include="josephjpearce_dribbble_exy-loader.gif" />
-    <Content Include="lg.dual-ring-loader.gif" />
     <Content Include="PizzaImages\190226-buffalo-chicken-pizza-370-1552084943.jpg" />
     <Content Include="PizzaImages\20-3-large.jpg" />
     <Content Include="PizzaImages\besthomemadepizzahero.jpg" />
@@ -299,9 +295,6 @@
     <Content Include="Views\Admin\CategoryEdit.cshtml" />
     <Content Include="Views\Home\Checkout.cshtml" />
     <Content Include="Views\Home\CheckoutDetails.cshtml" />
-    <Content Include="Views\Payment\PaymentWithPapal.cshtml" />
-    <Content Include="Views\Payment\FailureView.cshtml" />
-    <Content Include="Views\Payment\SuccessView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminStyle\css\" />
