@@ -228,10 +228,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Images\0_03_21_2017_08_03_26.jpg" />
-    <Content Include="Images\81_12_24_2017_10_26_28.jpg" />
-    <Content Include="Images\85_05_20_2018_11_20_09.jpg" />
-    <Content Include="Images\86_05_20_2018_11_24_43.jpg" />
+    <Content Include="Images\Homemade-CHeese-Pizza-1x1-featured-1.jpg" />
     <Content Include="Images\pizza_tasty1.jpeg" />
     <Content Include="Images\pizza_tasty2.png" />
     <Content Include="Images\searchIcon.png" />
@@ -242,6 +239,7 @@
     <Content Include="PizzaImages\besthomemadepizzahero.jpg" />
     <Content Include="PizzaImages\cheese-pizza-with-cauliflower-pesto-crust.png" />
     <Content Include="PizzaImages\Homemade-CHeese-Pizza-1x1-featured-1.jpg" />
+    <Content Include="PizzaImages\mushroom.jpg" />
     <Content Include="PizzaImages\Pepperoni-Pizza-10.jpg" />
     <Content Include="PizzaImages\sheet-pan-pizza-5-660x990.jpg" />
     <Content Include="PizzaImages\the-best-homemade-margherita-pizza-1-4.jpg" />
