@@ -4,11 +4,13 @@ using System.Linq;
 using System.Web.Mvc;
 using NewPizzaTask.Database;
 using NewPizzaTask.Models;
+using NewPizzaTask.ViewModels;
 using NewPizzaTask.DataModels;
 using PagedList;
 
 namespace NewPizzaTask.Controllers
 {
+
     public class HomeController : Controller
     {
         readonly ApplicationDBContext dBContext;
@@ -88,27 +90,29 @@ namespace NewPizzaTask.Controllers
             else
             {
                 List<CartItem> cart = (List<CartItem>)Session["cart"];
-                var count = cart.Count();
                 var product = dBContext.Products.Find(productId);
-                for (int i = 0; i < count; i++)
+                int count = cart.Count();
+                bool run = true;
+                lock (cart)
                 {
-                    if (cart[i].Product.ProductId == productId)
+                    foreach (var item in cart)
                     {
-                        int prevQty = cart[i].Quantity;
-
-                        cart.Remove(cart[i]);
-                        CartItem cartItem = new CartItem
+                        if (item.Product.ProductId == productId && run)
                         {
-                            Product = product,
-                            Quantity = prevQty + 1
-                        };
-                        cart.Add(cartItem);
-                        
-                        break;
-                    }
-                    else
-                    {
+                            int prevQty = item.Quantity;
+                            cart.Remove(item);
+                            CartItem cartItem = new CartItem()
+                            {
+                                Product = product,
+                                Quantity = prevQty + 1
+                            };
+                            cart.Add(cartItem);
+
+                            run = false;
+                        }
+
                         var prd = cart.Where(x => x.Product.ProductId == productId).SingleOrDefault();
+
                         if (prd == null)
                         {
                             CartItem cartItem = new CartItem
@@ -117,15 +121,19 @@ namespace NewPizzaTask.Controllers
                                 Quantity = 1
                             };
                             cart.Add(cartItem);
-                         
                         }
+
+
+
+                        Session["cart"] = cart;
                     }
+
                 }
-                Session["cart"] = cart;
             }
             
          return Redirect(url);
         }
+
         public ActionResult RemoveFromCart(int productId)
         {
             List<CartItem> cart = (List<CartItem>)Session["cart"];
