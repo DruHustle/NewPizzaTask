@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using NewPizzaTask.Database;
@@ -22,7 +24,7 @@ namespace NewPizzaTask.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            OrderDetail orderDetail = dBContext.ShippingDetails.Find(id);
+            OrderDetail orderDetail = dBContext.OrderDetails.Find(id);
             if (orderDetail == null)
             {
                 return HttpNotFound();
@@ -30,10 +32,19 @@ namespace NewPizzaTask.Controllers
             return View(orderDetail);
         }
 
+
+        public ActionResult Index()
+        {            
+            List<OrderDetail> orderDetails = dBContext.OrderDetails.ToList();
+            return View(orderDetails);                     
+
+        }
+
         // GET: OrderDetails/Create
         public ActionResult AddDetails()
         {
-            return View();
+          return View();         
+            
         }
 
         // POST: OrderDetails/Create
@@ -43,9 +54,9 @@ namespace NewPizzaTask.Controllers
         {
             if (ModelState.IsValid)
             {
-                dBContext.ShippingDetails.Add(orderDetail);
+                dBContext.OrderDetails.Add(orderDetail);
                 dBContext.SaveChanges();
-                return RedirectToAction("CheckoutDetails", "Home");
+                return RedirectToAction("Index");
             }
 
             return View(orderDetail);
@@ -58,7 +69,7 @@ namespace NewPizzaTask.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            OrderDetail orderDetail = dBContext.ShippingDetails.Find(id);
+            OrderDetail orderDetail = dBContext.OrderDetails.Find(id);
             if (orderDetail == null)
             {
                 return HttpNotFound();
@@ -75,7 +86,7 @@ namespace NewPizzaTask.Controllers
             {
                 dBContext.Entry(orderDetail).State = EntityState.Modified;
                 dBContext.SaveChanges();
-                return RedirectToAction("CheckoutDetails", "Home");
+                return RedirectToAction("Index");
             }
             return View(orderDetail);
         }
@@ -87,7 +98,7 @@ namespace NewPizzaTask.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            OrderDetail orderDetail = dBContext.ShippingDetails.Find(id);
+            OrderDetail orderDetail = dBContext.OrderDetails.Find(id);
             if (orderDetail == null)
             {
                 return HttpNotFound();
@@ -96,14 +107,15 @@ namespace NewPizzaTask.Controllers
         }
 
         // POST: OrderDetails/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
+        [ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            OrderDetail orderDetail = dBContext.ShippingDetails.Find(id);
-            dBContext.ShippingDetails.Remove(orderDetail);
+            OrderDetail orderDetail = dBContext.OrderDetails.Find(id);
+            dBContext.OrderDetails.Remove(orderDetail);
             dBContext.SaveChanges();
-            return RedirectToAction("Checkout","Home");
+            return RedirectToAction("Index");
         }
  
 

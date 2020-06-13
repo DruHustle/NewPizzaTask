@@ -28,32 +28,34 @@
 
     <div class="container" style="margin-top:10px">
         <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-6" >
-                <div class="logo" >
+            <div class="col-md-10 col-sm-10 col-xs-10">
+                <div class="logo">
                     <h1><a>Pizza <span>Online</span></a></h1>
                     <p>Love Pizza</p>
                 </div>
-            </div>            
-               
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a  class="dropdown-toggle nav navbar-nav"  data-toggle="dropdown" >Cart<span class="caret"></span> </a>
-                <ul class="dropdown-menu">
-                    @if (Session["cart"] != null)
-                    {
-                        foreach (CartItem item in (List<CartItem>)Session["cart"])
-                        {
-                            <li>
-                                <a href="@Url.Action("RemoveFromCart", "Home", new { productId=item.Product.ProductId})">@item.Product.ProductName (@item.Quantity) <i class="fa fa-times"></i></a>
-                            </li>
-                            <li class="divider"></li>
-                        }
-                    }
-                    <li><a href="@Url.Action("Checkout","Home")">Checkout</a></li>
+            </div>
+
+            <div class="col-md-2 col-sm-2 col-xs-2">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle nav navbar-nav" data-toggle="dropdown">Cart<span class="caret"></span> </a>
+                        <ul class="dropdown-menu">
+                            @if (Session["cart"] != null)
+                            {
+                                foreach (CartItem item in (List<CartItem>)Session["cart"])
+                                {
+                                    <li>
+                                        <a href="@Url.Action("RemoveFromCart", "Home", new { productId=item.Product.ProductId})">@item.Product.ProductName (@item.Quantity) <i class="fa fa-times"></i></a>
+                                    </li>
+                                    <li class="divider"></li>
+                                }
+                            }
+                            <li><a href="@Url.Action("Checkout","Home")">Checkout</a></li>
+                        </ul>
+                    </li>
                 </ul>
-                </li>
-            </ul>
-            
+            </div>
+
         </div>
 
         <div class="row">
@@ -65,6 +67,7 @@
                         <li class="active"><a style="border-radius:initial;" href="@Url.Action("Index","Home")">Home</a></li>
                         <li><a style="border-radius:initial;" href="#">Location</a></li>
                         <li><a style="border-radius:initial;" href="#">About</a></li>
+                        <li class="active"><a style="border-radius:initial;" href="@Url.Action("Contact","Home")">Contact</a></li>
                     </ul>
                 </div>
             </div>

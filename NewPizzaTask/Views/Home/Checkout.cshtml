@@ -30,7 +30,7 @@ else
                     <td>@item.Quantity</td>
                     <td>
                         <a href="@Url.Action("AddToCart", "Home", new { productId = item.Product.ProductId, url="Checkout" })">
-                            <i class="fa fa-plus" style="margin-right:auto"></i>
+                            <i class="fa fa-plus" style="margin-right:4px"></i>
                         </a>
                         <a href="@Url.Action("DecreaseQty", "Home", new { productId = item.Product.ProductId })">
                             <i class="fa fa-minus"></i>
@@ -42,7 +42,7 @@ else
         </tbody>
     </table>
 
-    <a href="@Url.Action("AddDetails", "OrderDetails")" class="btn btn-success">Add Order Details >></a>
+    <a href="@Url.Action("Index", "OrderDetails")" class="btn btn-success">Add Order Details >></a>
 
 
 }

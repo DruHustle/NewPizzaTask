@@ -194,6 +194,10 @@
     <Compile Include="Migrations\202006122258143_Migration1.Designer.cs">
       <DependentUpon>202006122258143_Migration1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006132045299_Migration2.cs" />
+    <Compile Include="Migrations\202006132045299_Migration2.Designer.cs">
+      <DependentUpon>202006132045299_Migration2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="DataModels\CartItem.cs" />
@@ -248,6 +252,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\OrderDetails\AddDetails.cshtml" />
+    <Content Include="Views\OrderDetails\DeleteDetails.cshtml" />
+    <Content Include="Views\OrderDetails\Details.cshtml" />
+    <Content Include="Views\OrderDetails\EditDetails.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -293,10 +301,8 @@
     <Content Include="Views\Admin\CategoryEdit.cshtml" />
     <Content Include="Views\Home\Checkout.cshtml" />
     <Content Include="Views\Home\CheckoutDetails.cshtml" />
-    <Content Include="Views\OrderDetails\AddDetails.cshtml" />
-    <Content Include="Views\OrderDetails\DeleteDetails.cshtml" />
-    <Content Include="Views\OrderDetails\Details.cshtml" />
-    <Content Include="Views\OrderDetails\EditDetails.cshtml" />
+    <Content Include="Views\OrderDetails\Index.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminStyle\css\" />
@@ -318,6 +324,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202006122258143_Migration1.resx">
       <DependentUpon>202006122258143_Migration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006132045299_Migration2.resx">
+      <DependentUpon>202006132045299_Migration2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
