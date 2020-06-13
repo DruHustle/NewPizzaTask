@@ -108,7 +108,7 @@ namespace NewPizzaTask.Controllers
 
         // POST: OrderDetails/Delete/5
         [HttpPost]
-        [ActionName("Delete")]
+        [ActionName("DeleteDetails")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {

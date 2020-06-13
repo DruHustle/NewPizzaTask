@@ -32,6 +32,16 @@ namespace NewPizzaTask.Controllers
             return View(productList);
         }
 
+        public ActionResult Home()
+        {
+            return View();
+        }
+
+        public ActionResult About()
+        {
+            return View();
+        }
+
         public ActionResult Checkout()
         {
             return View();
