@@ -91,45 +91,42 @@ namespace NewPizzaTask.Controllers
             {
                 List<CartItem> cart = (List<CartItem>)Session["cart"];
                 var product = dBContext.Products.Find(productId);
+                int count = cart.Count();      
 
-                lock (cart)
+                for (int i = 0; i < count; i++)
                 {
-                    int count = cart.Count();
-
-                    for (int i = 0; i < count; i++)
+                    if (cart[i].Product.ProductId == productId)
                     {
-                        if (cart[i].Product.ProductId == productId)
+                        int prevQty = cart[i].Quantity;
+                        cart.Remove(cart[i]);
+                        CartItem cartItem = new CartItem()
                         {
-                            int prevQty = cart[i].Quantity;
-                            cart.Remove(cart[i]);
-                            CartItem cartItem = new CartItem()
-                            {
-                                Product = product,
-                                Quantity = prevQty + 1
-                            };
-                            cart.Add(cartItem);
+                            Product = product,
+                            Quantity = prevQty + 1
+                        };
+                        cart.Insert(i,cartItem);
 
-                            break;
-                        }
-
-                        var prd = cart.Where(x => x.Product.ProductId == productId).SingleOrDefault();
-
-                        if (prd == null)
-                        {
-                            CartItem cartItem = new CartItem
-                            {
-                                Product = product,
-                                Quantity = 1
-                            };
-                            cart.Add(cartItem);
-                        }
-
-
-
-                        Session["cart"] = cart;
+                        break;
                     }
 
+                    var prd = cart.Where(x => x.Product.ProductId == productId).SingleOrDefault();
+
+                    if (prd == null)
+                    {
+                        CartItem cartItem = new CartItem
+                        {
+                            Product = product,
+                            Quantity = 1
+                        };
+                        cart.Add(cartItem);
+                    }
+
+
+
+                    Session["cart"] = cart;
                 }
+
+                
             }
             
          return Redirect(url);
