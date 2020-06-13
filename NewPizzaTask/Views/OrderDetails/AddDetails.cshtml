@@ -8,12 +8,12 @@
 <h2>Add Details</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("AddDetails", "OrderDetails", FormMethod.Post, new { orderDetail = Model }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

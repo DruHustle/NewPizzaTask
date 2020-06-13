@@ -45,7 +45,7 @@ namespace NewPizzaTask.Controllers
             {
                 dBContext.ShippingDetails.Add(orderDetail);
                 dBContext.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("CheckoutDetails", "Home");
             }
 
             return View(orderDetail);
@@ -75,7 +75,7 @@ namespace NewPizzaTask.Controllers
             {
                 dBContext.Entry(orderDetail).State = EntityState.Modified;
                 dBContext.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("CheckoutDetails", "Home");
             }
             return View(orderDetail);
         }
@@ -103,8 +103,9 @@ namespace NewPizzaTask.Controllers
             OrderDetail orderDetail = dBContext.ShippingDetails.Find(id);
             dBContext.ShippingDetails.Remove(orderDetail);
             dBContext.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Checkout","Home");
         }
+ 
 
         protected override void Dispose(bool disposing)
         {
