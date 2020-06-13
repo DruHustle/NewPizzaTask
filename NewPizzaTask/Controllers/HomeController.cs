@@ -24,8 +24,8 @@ namespace NewPizzaTask.Controllers
             int pageSize = 8;
 
             IPagedList<Product> productList = string.IsNullOrWhiteSpace(search)
-                ? this.dBContext.Products.OrderBy(x => x.ProductId).ToPagedList(pageIndex, pageSize)
-                : this.dBContext.Products.Where(x => (x.ProductName ?? String.Empty).ToLower().Contains(search.ToLower())).OrderBy(x => x.ProductId).ToPagedList(pageIndex, pageSize);
+                ? this.dBContext.Products.Where(i => i.IsDelete == false).OrderBy(x => x.ProductId).ToPagedList(pageIndex, pageSize)
+                : this.dBContext.Products.Where(i => i.IsDelete == false).Where(x => (x.ProductName ?? String.Empty).ToLower().Contains(search.ToLower())).OrderBy(x => x.ProductId).ToPagedList(pageIndex, pageSize);
 
             return View(productList);
         }

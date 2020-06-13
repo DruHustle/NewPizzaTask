@@ -26,10 +26,10 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Sr. No.</th>
+                                <th>Number</th>
                                 <th>Category Name</th>
-                                <th>Action</th>
-                              
+                                <th>Edit</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -52,7 +52,7 @@
                                 </td>
                                 <td>
 
-                                    @Html.ActionLink("Delete", "CategoryDelete", new { productId = item.CategoryId })
+                                    @Html.ActionLink("Delete", "CategoryDelete", new { catId = item.CategoryId })
                                 </td>
 
 

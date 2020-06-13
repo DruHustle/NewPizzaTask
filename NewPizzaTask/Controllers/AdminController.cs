@@ -88,7 +88,7 @@ namespace NewPizzaTask.Controllers
 
         public ActionResult Product()
         {
-            return View(dBContext.Products.ToList());
+            return View(dBContext.Products.Where(i => i.IsDelete == false).ToList());
         }
         
         public ActionResult ProductDelete(int productId)
@@ -146,7 +146,8 @@ namespace NewPizzaTask.Controllers
             }
             tbl.ProductImage = pic;
             tbl.CreatedDate = DateTime.Now;
-            tbl.ModifiedDate = DateTime.MinValue;
+            tbl.ModifiedDate = Convert.ToDateTime("05 / 05 / 2005");
+            tbl.PriceUSD = tbl.PriceEUR * Convert.ToDecimal(1.1300);
             dBContext.Products.Add(tbl);
             dBContext.SaveChanges();
             return RedirectToAction("Product");
