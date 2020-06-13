@@ -92,28 +92,26 @@ namespace NewPizzaTask.Controllers
                 List<CartItem> cart = (List<CartItem>)Session["cart"];
                 var product = dBContext.Products.Find(productId);
                 int count = cart.Count();
-                bool run = true;
-                lock (cart)
-                {
-                    foreach (var item in cart)
+                
+                for ( int i= 0; i< count; i++)
+                {  
+                    if (cart[i].Product.ProductId == productId)
                     {
-                        if (item.Product.ProductId == productId && run)
+                        int prevQty = cart[i].Quantity;
+                        cart.Remove(cart[i]);
+                        CartItem cartItem = new CartItem()
                         {
-                            int prevQty = item.Quantity;
-                            cart.Remove(item);
-                            CartItem cartItem = new CartItem()
-                            {
-                                Product = product,
-                                Quantity = prevQty + 1
-                            };
-                            cart.Add(cartItem);
+                            Product = product,
+                            Quantity = prevQty + 1
+                        };
+                        cart.Add(cartItem);
 
-                            run = false;
-                        }
+                        break;
+                    }
 
-                        var prd = cart.Where(x => x.Product.ProductId == productId).SingleOrDefault();
+                    var prd = cart.Where(x => x.Product.ProductId == productId).SingleOrDefault();
 
-                        if (prd == null)
+                    if (prd == null)
                         {
                             CartItem cartItem = new CartItem
                             {
@@ -122,13 +120,13 @@ namespace NewPizzaTask.Controllers
                             };
                             cart.Add(cartItem);
                         }
-
-
-
-                        Session["cart"] = cart;
-                    }
-
+                    
+                        
+                    
+                    Session["cart"] = cart;
                 }
+
+
             }
             
          return Redirect(url);
