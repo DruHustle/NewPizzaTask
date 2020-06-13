@@ -19,13 +19,14 @@ else
                 <th>Product</th>
                 <th>Price EUR</th>
                 <th>Quantity</th>
-                <th>Line Total</th>
+                <th>Total Pice EUR</th>
 
             </tr>
         </thead>
         <tbody>
             @{
                 int Total = 0;
+                int Del = 20;
             }
             @foreach (CartItem item in (List<CartItem>)Session["cart"])
             {
@@ -42,13 +43,16 @@ else
                 </tr>
             }
 
-            <tr>
-                <td colspan="4" class="text-right"><b>Total: @Total</b></td>
+        <tr>
+            <td colspan="4" class="text-right"><b>Order Total: @Total </b></td>
+            <td colspan="4" class="text-right"><b>Delivery Fee: @Del</b></td>
+            <td colspan="4" class="text-right"><b>Checkout Total: @Total + @Del </b></td>
 
-            </tr>
+        </tr>
         </tbody>
     </table>
-    <a href="@Url.Action("PaymentWithPapal", "Payment")" class="btn btn-success">Payment >></a>
+    <a href="@Url.Action("Checkout", "Home")" class="btn btn-success">Back to Cart</a>
+    <a href="@Url.Action("AddDetails", "OrderDetails")" class="btn btn-success">Order Details >></a>
 
 }
 

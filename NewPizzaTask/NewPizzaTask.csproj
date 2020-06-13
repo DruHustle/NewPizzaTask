@@ -185,6 +185,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrderDetailsController.cs" />
     <Compile Include="Database\ApplicationDBContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -292,6 +293,10 @@
     <Content Include="Views\Admin\CategoryEdit.cshtml" />
     <Content Include="Views\Home\Checkout.cshtml" />
     <Content Include="Views\Home\CheckoutDetails.cshtml" />
+    <Content Include="Views\OrderDetails\AddDetails.cshtml" />
+    <Content Include="Views\OrderDetails\DeleteDetails.cshtml" />
+    <Content Include="Views\OrderDetails\Details.cshtml" />
+    <Content Include="Views\OrderDetails\EditDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminStyle\css\" />

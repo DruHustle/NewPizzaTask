@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @*@Styles.Render("~/Content/css")*@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
@@ -39,7 +38,6 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a  class="dropdown-toggle nav navbar-nav"  data-toggle="dropdown" >Cart<span class="caret"></span> </a>
-                    @*<a class="dropdown-toggle nav navbar-nav" data-toggle="dropdown" href="#"> Modules <span class="caret"></span> </a>*@
                 <ul class="dropdown-menu">
                     @if (Session["cart"] != null)
                     {
@@ -64,7 +62,7 @@
                 <div class="nav-menus">
 
                     <ul class="nav nav-pills">
-                        <li class="active"><a style="border-radius:initial;" href="#">Home</a></li>
+                        <li class="active"><a style="border-radius:initial;" href="@Url.Action("Index","Home")">Home</a></li>
                         <li><a style="border-radius:initial;" href="#">Location</a></li>
                         <li><a style="border-radius:initial;" href="#">About</a></li>
                     </ul>

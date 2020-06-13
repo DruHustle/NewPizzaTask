@@ -121,11 +121,8 @@ namespace NewPizzaTask.Controllers
                         cart.Add(cartItem);
                     }
 
-
-
                     Session["cart"] = cart;
                 }
-
                 
             }
             
@@ -139,9 +136,8 @@ namespace NewPizzaTask.Controllers
             {
                 if (item.Product.ProductId == productId)
                 {
-                    cart.Remove(item);
-                    
-                 ;
+                    cart.Remove(item);                    
+                 
                     break;
                 }
             }
