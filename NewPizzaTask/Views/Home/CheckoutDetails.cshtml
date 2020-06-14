@@ -1,0 +1,63 @@
+﻿@using NewPizzaTask.DataModels;
+@{
+    ViewBag.Title = "CheckoutDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Session["cart"] == null)
+{
+    <div class="alert alert-danger">
+        <strong>No product added to cart!</strong>
+    </div>
+
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price EUR</th>
+                <th>Quantity</th>
+                <th>Total Pice EUR</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int Total = 0;
+                int Delivery = 20;
+                int OderTotal = 0;
+            }
+            @foreach (CartItem item in (List<CartItem>)Session["cart"])
+            {
+                int lineTotal = Convert.ToInt32(item.Quantity * item.Product.PriceEUR);
+                Total = Convert.ToInt32(@Total + lineTotal);
+
+                Session["SesTotal"] = Total;
+
+                OderTotal = (Total + Delivery);
+
+                <tr>
+                    <td>@item.Product.ProductName</td>
+                    <td>@item.Product.PriceEUR</td>
+                    <td>@item.Quantity</td>
+                    <td>@lineTotal</td>
+                </tr>
+            }
+
+        <tr>
+            <td colspan="4" class="text-right"><b>Checkout Total: @Total </b></td>
+        </tr>
+        <tr>
+            <td colspan="4" class="text-right"><b>Delivery Fee: @Delivery </b></td>
+        </tr>  
+            
+        <tr>
+            <td colspan="4" class="text-right"><b>Order Total : @OderTotal </b></td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="@Url.Action("Index", "Home")" class="btn btn-success">Back to Index</a>
+}
+
