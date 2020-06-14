@@ -25,14 +25,14 @@ else
         </thead>
         <tbody>
             @{
-                int Total = 0;
-                int Delivery = 20;
-                int OderTotal = 0;
+                decimal Total = 0;
+                decimal Delivery = 20;
+                decimal OderTotal = 0;
             }
             @foreach (CartItem item in (List<CartItem>)Session["cart"])
             {
-                int lineTotal = Convert.ToInt32(item.Quantity * item.Product.PriceEUR);
-                Total = Convert.ToInt32(@Total + lineTotal);
+                decimal lineTotal = Math.Round((item.Quantity * item.Product.PriceEUR),2);
+                Total = @Total + lineTotal;
 
                 Session["SesTotal"] = Total;
 
