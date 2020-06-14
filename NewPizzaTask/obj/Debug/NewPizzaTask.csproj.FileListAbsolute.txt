@@ -139,7 +139,6 @@ C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Microsoft.Owin
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.csprojAssemblyReference.cache
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.Migrations.Migration1.resources
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.Migrations.Migration2.resources
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.csproj.GenerateResource.cache
