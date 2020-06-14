@@ -2,17 +2,14 @@ namespace NewPizzaTask.Database
 {
     using System;
     using System.Linq;
-    using System.Reflection;
-    using System.Security.Claims;
-    using System.Threading.Tasks;
-    using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
-    using System.Collections.Generic;
     using System.Data.Entity;
-    using System.Data.Entity.Validation;
     using NewPizzaTask.Models;
     using NewPizzaTask.SecurityModels;
+    using MySql.Data.Entity;
+    using System.ComponentModel.DataAnnotations.Schema;
 
+    [DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class ApplicationDBContext : IdentityDbContext<ApplicationUser>
     {
         // Your context has been configured to use a 'ApplicationContext' connection string from your application's 
@@ -26,10 +23,36 @@ namespace NewPizzaTask.Database
         }
         public static ApplicationDBContext Create()
         {
+            DbConfiguration.SetConfiguration(new MySqlEFConfiguration());
             return new ApplicationDBContext();
         }
 
-        
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<System.Data.Entity.ModelConfiguration.Conventions.PluralizingTableNameConvention>();
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Properties().Where(x =>
+                    x.PropertyType.FullName != null &&
+                    (x.PropertyType.FullName.Equals("System.String") &&
+                    !x.GetCustomAttributes(false).OfType<ColumnAttribute>().Any(q => q.TypeName != null &&
+                    q.TypeName.Equals("varchar(max)", StringComparison.InvariantCultureIgnoreCase)))).Configure(c =>
+                    c.HasColumnType("varchar(65000)"));
+
+            modelBuilder.Properties().Where(x =>
+                    x.PropertyType.FullName != null &&
+                    (x.PropertyType.FullName.Equals("System.String") &&
+                    !x.GetCustomAttributes(false).OfType<ColumnAttribute>().Any(q => q.TypeName != null &&
+                    q.TypeName.Equals("nvarchar", StringComparison.InvariantCultureIgnoreCase)))).Configure(c =>
+                    c.HasColumnType("varchar"));
+
+            //    modelBuilder.Entity<IdentityRole>().HasKey(x => x.Id);
+            //    modelBuilder.Entity<IdentityUserLogin>().HasKey(x => x.UserId);
+            //   modelBuilder.Entity<IdentityUserRole>().HasKey(x => new { x.RoleId, x.UserId });
+        }
+
+
         public DbSet<Cart> Carts { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
@@ -37,12 +60,7 @@ namespace NewPizzaTask.Database
 
 
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<IdentityRole>().HasKey(x => x.Id);
-            modelBuilder.Entity<IdentityUserLogin>().HasKey(x => x.UserId);
-            modelBuilder.Entity<IdentityUserRole>().HasKey(x => new { x.RoleId, x.UserId });
-        }
+       
 
     }
 

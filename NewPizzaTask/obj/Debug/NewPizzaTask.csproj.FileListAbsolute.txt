@@ -61,6 +61,7 @@ C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Microsoft.Owin
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\MySql.Data.dll
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\MySql.Data.Entity.EF6.dll
+C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\MySqlConnector.dll
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Newtonsoft.Json.dll
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Owin.dll
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\PagedList.dll
@@ -69,6 +70,7 @@ C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Renci.SshNet.d
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\System.Buffers.dll
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\System.Memory.dll
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\System.Threading.Tasks.Extensions.dll
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\System.Web.Helpers.dll
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\System.Web.Mvc.dll
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\System.Web.Optimization.dll
@@ -76,9 +78,7 @@ C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\System.Web.Raz
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\System.Web.WebPages.Deployment.dll
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\System.Web.WebPages.dll
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\System.Web.WebPages.Razor.dll
-C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Ubiety.Dns.Core.dll
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\WebGrease.dll
-C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Zstandard.Net.dll
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\EntityFramework.xml
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\EntityFramework.SqlServer.xml
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Google.Protobuf.xml
@@ -114,6 +114,7 @@ C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Microsoft.Exte
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Microsoft.Net.Http.Headers.xml
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\MySql.Data.xml
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\MySql.Data.Entity.EF6.xml
+C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\MySqlConnector.xml
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Newtonsoft.Json.xml
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\PagedList.xml
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\PagedList.Mvc.xml
@@ -121,6 +122,7 @@ C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Renci.SshNet.x
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\System.Buffers.xml
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\System.Memory.xml
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\System.Threading.Tasks.Extensions.xml
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\System.Web.Helpers.xml
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\System.Web.Mvc.xml
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\System.Web.Optimization.xml
@@ -139,8 +141,8 @@ C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Microsoft.Owin
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.Migrations.Migration1.resources
-C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.Migrations.Migration2.resources
+C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.csprojAssemblyReference.cache
+C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.Migrations.InitialMigration.resources
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.csproj.GenerateResource.cache
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.csproj.CoreCompileInputs.cache
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.csproj.CopyComplete
