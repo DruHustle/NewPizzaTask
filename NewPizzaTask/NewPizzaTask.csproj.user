@@ -10,6 +10,9 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <ProjectView>ShowAllFiles</ProjectView>
+    <ActiveDebugTarget>
+    </ActiveDebugTarget>
+    <NameOfLastUsedPublishProfile>FolderProfile</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

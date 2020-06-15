@@ -1,0 +1,53 @@
+﻿@using NewPizzaTask.DataModels
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<hr>
+
+<h2>Checkout</h2>
+@if (Session["cart"] == null)
+{
+    <div class="alert alert-danger">
+        <strong>No product added to cart!</strong>
+    </div>
+    <a href="@Url.Action("Index","Home")" class="btn btn-success">Back</a>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Add/Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (CartItem item in (List<CartItem>)Session["cart"])
+            {
+                <tr>
+                    <td>@item.Product.ProductName</td>
+                    <td>@item.Quantity</td>
+                    <td>
+                        <a href="@Url.Action("AddToCart", "Home", new { productId = item.Product.ProductId, url="Checkout" })">
+                            <i class="fa fa-plus" style="margin-right:4px"></i>
+                        </a>
+                        <a href="@Url.Action("DecreaseQty", "Home", new { productId = item.Product.ProductId })">
+                            <i class="fa fa-minus"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <a href="@Url.Action("Index", "OrderDetails")" class="btn btn-success">Add Order Details >></a>
+
+
+}
+
+
+
