@@ -147,3 +147,4 @@ C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizza
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.csproj.CopyComplete
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.dll
 C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.pdb
+C:\Users\Andrew Gotora\source\repos\NewPizzaTask\NewPizzaTask\obj\Debug\NewPizzaTask.csprojAssemblyReference.cache
