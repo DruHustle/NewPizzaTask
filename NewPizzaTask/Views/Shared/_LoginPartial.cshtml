@@ -11,14 +11,15 @@
             
              <a class="dropdown-toggle nav navbar-nav" data-toggle="dropdown">Hi @User.Identity.GetUserName() <span class="caret"></span></a>
             
-                <ul class="dropdown-menu">
-                    @if (this.User.IsInRole("Admin"))
-                    {
-                        <li> <a class="dropdown-item" href="@Url.Action("Index","Manage")">Manage Logins</a></li>
-                        <li> <a class="dropdown-item" href="@Url.Action("Dashboard","Admin")">Admin Dashboard</a></li>
-                    }
-                        <li><a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-                 </ul>
+             <ul class="dropdown-menu">
+                 @if (this.User.IsInRole("Admin"))
+                 {
+
+                     <li> <a class="dropdown-item" href="@Url.Action("Dashboard","Admin")">Admin Dashboard</a></li>
+                 }
+                 <li> <a class="dropdown-item" href="@Url.Action("Index","Manage")">Account settings</a></li>
+                 <li><a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+             </ul>
             
 
             </li>
