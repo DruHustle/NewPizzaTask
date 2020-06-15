@@ -1,3 +1,14 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //choose the admin layout if logged as user with admin role
+    /*IsInRole("Admin".Identity.Name == "andrewgotora@yahoo.com")*/
+    if ( this.User.IsInRole("Admin")  && this.User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+    else
+    {
+        //everyone else uses basic layout
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    // Layout = "~/Views/Shared/_Layout.cshtml";
 }

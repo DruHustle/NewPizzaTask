@@ -6,14 +6,23 @@ using System.Web;
 using System.Web.Mvc;
 using NewPizzaTask.Database;
 using System.Data.Entity;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace NewPizzaTask.Controllers
 {
+    //only authorized admin roles access views that are connected here hence login redirection 
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         // GET: Admin
 
         readonly ApplicationDBContext dBContext = new ApplicationDBContext();
+       // private readonly UserManager<IdentityUser> _userManager;
+        public AdminController()
+        {
+           // _userManager = new UserManager<IdentityUser>();
+        }
 
         public List<SelectListItem> GetCategory()
         {

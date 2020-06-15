@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web.Mvc;
 using NewPizzaTask.Database;
 using NewPizzaTask.Models;
-using NewPizzaTask.ViewModels;
 using NewPizzaTask.DataModels;
 using PagedList;
 

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace NewPizzaTask.ViewModels
+namespace NewPizzaTask.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
@@ -48,10 +48,16 @@ namespace NewPizzaTask.ViewModels
 
     public class LoginViewModel
     {
+        //Changed to username to accomodate shorter display names on view
+        /* [Required]
+         [Display(Name = "Email")]
+         [EmailAddress]
+         public string Email { get; set; }*/
+
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Username")]
+        [StringLength(16, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 5)]
+        public string Username { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,6 +70,12 @@ namespace NewPizzaTask.ViewModels
 
     public class RegisterViewModel
     {
+        [Required]
+        [Display(Name = "Username")]
+        [StringLength(16, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 5)]
+
+        public string Username { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
