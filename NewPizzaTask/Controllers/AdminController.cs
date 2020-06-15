@@ -156,7 +156,7 @@ namespace NewPizzaTask.Controllers
             tbl.ProductImage = pic;
             tbl.CreatedDate = DateTime.Now;
             tbl.ModifiedDate = Convert.ToDateTime("05 / 05 / 2005");
-            tbl.PriceUSD = tbl.PriceEUR * Convert.ToDecimal(1.1300);
+            tbl.PriceUSD = tbl.PriceEUR * (Convert.ToDecimal(1.1300));
             dBContext.Products.Add(tbl);
             dBContext.SaveChanges();
             return RedirectToAction("Product");
