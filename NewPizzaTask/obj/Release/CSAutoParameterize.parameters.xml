@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ApplicationDBConnection-Web.config Connection String" description="ApplicationDBConnection Connection String used in web.config by the application to access the database." defaultValue="server=remotemysql.com;Port=3306;database=lJUjTfUQKm;uid=lJUjTfUQKm;pwd=7DaftvxJf0" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Andrew\ Gotora\\source\\repos\\NewPizzaTask\\NewPizzaTask\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ApplicationDBConnection']/@connectionString" />
+  </parameter>
+</parameters>

@@ -36,7 +36,6 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                     <a class="dropdown-item" href="@Url.Action("Index","Home")">Return To Home</a>
-                    <div class="dropdown-divider"></div>
                 </div>
             </li>
          
@@ -68,7 +67,7 @@
         </ul>
         <div id="content-wrapper">
 
-            @*//*IsInRole("Admin".Identity.Name == "andrewgotora@yahoo.com")*@
+            @*//*IsInRole("Admin".Identity.Name == "admin@admin.com")*@
             @if (this.User.IsInRole("Admin") && this.User.Identity.IsAuthenticated)
             {
                 @RenderBody()

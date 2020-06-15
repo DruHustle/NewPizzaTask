@@ -412,6 +412,7 @@
     <Content Include="Content\font-awesome-5.0.13\web-fonts-with-css\webfonts\fa-solid-900.ttf" />
     <Content Include="Content\font-awesome-5.0.13\web-fonts-with-css\webfonts\fa-solid-900.woff" />
     <Content Include="Content\font-awesome-5.0.13\web-fonts-with-css\webfonts\fa-solid-900.woff2" />
+    <None Include="Properties\PublishProfiles\NewPizzaTask - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -440,7 +441,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
